@@ -6,6 +6,7 @@ SRC			= 	main.c	\
 				clean.c	\
 				parsing.c	\
 				quit.c	\
+				minimap.c	\
 
 SRCSPATH 	= srcs
 
@@ -17,7 +18,7 @@ CC			= gcc
 
 LIBFT		=	libft/libft.a
 
-CFLAGS		= -Werror -Wall -Wextra -g3
+CFLAGS		= -Werror -Wall -Wextra -g3 
 
 MLX			=	-L ./mlx/ -lmlx -lXext -lX11 -lm -O3
 

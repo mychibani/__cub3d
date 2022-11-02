@@ -6,7 +6,7 @@
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:02:13 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/02 16:16:33 by ychibani         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:22:21 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,14 @@ int	main(int ac, char **av)
 {
 	t_program_data data;
 
+	if (SCREEN_HEIGHT < 0 || SCREEN_WIDTH < 0)
+		exit(__FAILURE);
 	if (!parameter_analyse(ac, av))
 		return (__usage(), __FAILURE);
 	else
 		if (__init_cub3d(&data) == __FAILURE)
 			return (__quit(&data), __FAILURE);
+	minimap(&data);
 	// if (!parsing(av, &data))
 		// return (__FAILURE);
 	// if (!init_game(&data))

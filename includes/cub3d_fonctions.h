@@ -6,7 +6,7 @@
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:09:42 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/02 16:17:33 by ychibani         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:03:20 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	__usage(void);
 **				Init
 */
 
-int	__init_cub3d(t_program_data *data);
+int		__init_cub3d(t_program_data *data);
 
 /*
 **				Parsing
@@ -55,4 +55,5 @@ void	__free(void *addr);
 **			Raycasting
 */
 
+void	minimap(t_program_data *data);
 #endif

@@ -31,9 +31,17 @@ typedef struct s_cub
 
 } t_cub;
 
+typedef struct s_player	
+{
+	int x;
+	int y;
+	double angle;
+}	t_player;
+
 typedef struct s_program_data
 {
 	t_cub cub;
+	t_player *player;
 
 } t_program_data;
 
