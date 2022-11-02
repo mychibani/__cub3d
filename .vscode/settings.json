@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"structs.h": "c",
+		"fonctions.h": "c",
+		"cub3d_fonctions.h": "c"
+	}
+}
