@@ -6,7 +6,7 @@
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 17:21:26 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/01 13:35:15 by ychibani         ###   ########.fr       */
+/*   Updated: 2022/11/04 11:15:04 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
 # include <stddef.h>
 # include <fcntl.h>
-# include <stdio.h>
+# include <stdlib.h>
 # include "libft_defines.h"
 # include "libft_structs.h"
 # include "libft_fonctions.h"

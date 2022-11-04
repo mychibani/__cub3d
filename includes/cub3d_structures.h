@@ -38,6 +38,27 @@ typedef struct s_player
 	double angle;
 }	t_player;
 
+typedef struct s_line
+{
+	int				x0;
+	int				x1;
+	int				y0;
+	int				y1;
+	unsigned int	color;
+
+}	t_line;
+
+typedef struct s_vars
+{
+	int	dx;
+	int	sx;
+	int	sy;
+	int	dy;
+	int	err;
+	int	e2;
+
+}	t_vars;
+
 typedef struct s_program_data
 {
 	t_cub cub;

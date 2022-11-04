@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   fabs.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 20:05:31 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/03 14:11:26 by ychibani         ###   ########.fr       */
+/*   Created: 2022/06/10 12:22:20 by ychibani          #+#    #+#             */
+/*   Updated: 2022/07/07 14:57:32 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+/*
+**					Absolute value of a float
+*/
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <math.h>
-# include <mlx.h>
-# include "libft.h"
-# include "cub3d_defines.h"
-# include "cub3d_enums.h"
-# include "cub3d_structures.h"
-# include "cub3d_fonctions.h"
+#include "libft.h"
 
-#endif
+float	float_abs(float x)
+{
+	if (x < 0)
+		return (-x);
+	return (x);
+}

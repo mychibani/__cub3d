@@ -6,7 +6,7 @@
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:02:13 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/02 18:22:21 by ychibani         ###   ########.fr       */
+/*   Updated: 2022/11/04 11:35:58 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int	parsing(int ac, char **av)
 
 int	main(int ac, char **av)
 {
-	t_program_data data;
+	t_program_data	data;
 
 	if (SCREEN_HEIGHT < 0 || SCREEN_WIDTH < 0)
 		exit(__FAILURE);

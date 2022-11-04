@@ -6,20 +6,20 @@
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 10:09:08 by ychibani          #+#    #+#             */
-/*   Updated: 2022/10/04 13:27:45 by ychibani         ###   ########.fr       */
+/*   Updated: 2022/11/04 11:32:00 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	_is_newline(char c)
+static int	is_newline(char c)
 {
 	if (c == '\n')
 		return (1);
 	return (0);
 }
 
-char	*_get_line(char *str)
+static char	*get_line(char *str)
 {
 	int		i;
 	char	*final_str;
@@ -41,7 +41,7 @@ char	*_get_line(char *str)
 	return (final_str);
 }
 
-int	_is_line(char *str)
+int	is_line(char *str)
 {
 	int	i;
 
@@ -50,14 +50,14 @@ int	_is_line(char *str)
 		return (0);
 	while (str[i])
 	{
-		if (_is_newline(str[i]))
+		if (is_newline(str[i]))
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-char	*_get_save(char *save)
+char	*get_save(char *save)
 {
 	int		i;
 	int		j;
@@ -67,7 +67,7 @@ char	*_get_save(char *save)
 	j = 0;
 	if (!save)
 		return (NULL);
-	while (save[i] && !_is_newline(save[i]))
+	while (save[i] && !is_newline(save[i]))
 		i++;
 	if (!save[i] || !save[i + 1])
 		return (free(save), NULL);
@@ -95,13 +95,8 @@ char	*__gnl(int fd)
 
 	if (BUFFER_READ < 1 || fd < 0)
 		return (0);
-	if (fd == -1 && save)
-	{
-		free(save);
-		save = NULL;
-	}
 	ret = 1;
-	while (ret && !_is_line(save))
+	while (ret && !is_line(save))
 	{
 		ret = read(fd, buffer, BUFFER_READ);
 		if (ret <= 0)
@@ -109,7 +104,7 @@ char	*__gnl(int fd)
 		buffer[ret] = '\0';
 		save = __strjoin(save, buffer);
 	}
-	line = _get_line(save);
-	save = _get_save(save);
+	line = get_line(save);
+	save = get_save(save);
 	return (line);
 }

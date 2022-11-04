@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   double_trn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 20:05:31 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/03 14:11:26 by ychibani         ###   ########.fr       */
+/*   Created: 2022/07/07 14:18:07 by ychibani          #+#    #+#             */
+/*   Updated: 2022/07/07 15:07:01 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
-
-# include <stdio.h>
-# include <stdlib.h>
-# include <math.h>
-# include <mlx.h>
-# include "libft.h"
-# include "cub3d_defines.h"
-# include "cub3d_enums.h"
-# include "cub3d_structures.h"
-# include "cub3d_fonctions.h"
-
-#endif
+double  double_trn(int condition, double success, double failure)
+{
+	if (condition)
+		return (success);
+	return (failure);
+}

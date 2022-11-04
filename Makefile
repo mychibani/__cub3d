@@ -6,6 +6,12 @@ SRC			= 	main.c	\
 				clean.c	\
 				parsing.c	\
 				quit.c	\
+				draw.c	\
+				draw_utils.c	\
+				draw_line.c	\
+				draw_square.c	\
+				draw_circle.c	\
+				draw_pixel.c	\
 				minimap.c	\
 
 SRCSPATH 	= srcs

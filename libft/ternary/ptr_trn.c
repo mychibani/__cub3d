@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ptr_trn.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 20:05:31 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/03 14:11:26 by ychibani         ###   ########.fr       */
+/*   Created: 2022/07/07 15:04:45 by ychibani          #+#    #+#             */
+/*   Updated: 2022/07/07 15:06:38 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+void    *void_ptr_trn(int condition, void *success, void *failure)
+{
+	if (condition)
+		return (success);
+	return (failure);
+}
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <math.h>
-# include <mlx.h>
-# include "libft.h"
-# include "cub3d_defines.h"
-# include "cub3d_enums.h"
-# include "cub3d_structures.h"
-# include "cub3d_fonctions.h"
+char    *char_ptr_trn(int condition, char *success, char *failure)
+{
+	if (condition)
+		return (success);
+	return (failure);
+}
 
-#endif
+int     *int_ptr_trn(int condition, int *success, int *failure)
+{
+	if (condition)
+		return (success);
+	return (failure);
+}

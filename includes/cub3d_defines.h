@@ -6,7 +6,7 @@
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:36:28 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/02 18:00:03 by ychibani         ###   ########.fr       */
+/*   Updated: 2022/11/03 11:57:57 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@
 
 # ifndef SCALING
 #  define SCALING 1
+# endif
+
+# ifndef PI
+# 	define PI 3.1415926535
 # endif
 
 # ifndef BLOCK_SIZE

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   draw_circle.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 20:05:31 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/03 14:11:26 by ychibani         ###   ########.fr       */
+/*   Created: 2022/11/03 17:39:38 by ychibani          #+#    #+#             */
+/*   Updated: 2022/11/04 11:42:45 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "cub3d.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <math.h>
-# include <mlx.h>
-# include "libft.h"
-# include "cub3d_defines.h"
-# include "cub3d_enums.h"
-# include "cub3d_structures.h"
-# include "cub3d_fonctions.h"
+void	draw_circle(int x, int y, int r, int color, t_cub *cub)
+{
+	double	i;
+	double	angle;
+	double	x1;
+	double	y1;
 
-#endif
+	i = 0;
+	while (i < 360)
+	{
+		angle = i;
+		x1 = r * cos(angle * PI / 180);
+		y1 = r * sin(angle * PI / 180);
+		draw_pixel(cub, x + x1, y + y1, color);
+		i += 0.1;
+	}
+}

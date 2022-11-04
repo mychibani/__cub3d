@@ -6,7 +6,7 @@
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:09:42 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/02 17:03:20 by ychibani         ###   ########.fr       */
+/*   Updated: 2022/11/03 17:49:17 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,15 @@ void	__free(void *addr);
 */
 
 void	minimap(t_program_data *data);
+
+/*
+**			Minimap
+*/
+
+void	draw_square(int x, int y, int cote, int color, t_cub *cub);
+void	draw_line(t_cub *cub, t_line *line);
+void	draw_circle(int x, int y, int r, int color, t_cub *cub);
+void	draw_pixel(t_cub *cub, int x, int y, int color);
+int		__put_image_to_window(t_program_data *data);
+
 #endif

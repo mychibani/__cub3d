@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   __isascii.c                                       :+:      :+:    :+:   */
+/*   minus_fractional_integer_part.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychibani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 16:27:38 by ychibani          #+#    #+#             */
-/*   Updated: 2021/11/23 09:19:53 by ychibani         ###   ########.fr       */
+/*   Created: 2022/06/10 12:21:30 by ychibani          #+#    #+#             */
+/*   Updated: 2022/06/10 12:21:49 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	__isascii(int c)
+#include "libft.h"
+
+float	minus_fractional_part(float x)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	return (1 - (fractional_part(x)));
 }
