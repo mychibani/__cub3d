@@ -6,7 +6,7 @@
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:09:42 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/03 17:49:17 by ychibani         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:21:14 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 **				Mlx
 */
 
+void	init_user_pos(t_player *player);
 int		__mlx_init(t_cub *cub);
 
 /*
@@ -55,7 +56,7 @@ void	__free(void *addr);
 **			Raycasting
 */
 
-void	minimap(t_program_data *data);
+int	minimap(t_program_data *data);
 
 /*
 **			Minimap

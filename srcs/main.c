@@ -6,7 +6,7 @@
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:02:13 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/04 11:35:58 by ychibani         ###   ########.fr       */
+/*   Updated: 2022/11/04 18:38:34 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*fill_string(int fd)
 
 void	jump_to_next_elem(char *s, int *len, int *start)
 {
-	while(s[*len] != '\n')
+	while (s[*len] != '\n')
 		*len += 1;
 	*len += 1;
 	*start = *len;
@@ -92,6 +92,29 @@ int	parsing(int ac, char **av)
 	return (1);
 }
 
+int	move_little_square(int key_hook, t_program_data *data)
+{
+	if (key_hook == ESC)
+		exit(1);
+	if (key_hook == 97)
+		data->player->x -= 2;
+	if (key_hook == W)
+		data->player->y -= 2;
+	if (key_hook == 100)
+		data->player->x += 2;
+	if (key_hook == S)
+		data->player->y += 2;
+	return (1);
+}
+
+int	close_little_window(t_program_data *data)
+{
+	// clean
+	(void)data;
+	exit(1);
+	return (1);
+}
+
 int	main(int ac, char **av)
 {
 	t_program_data	data;
@@ -103,12 +126,17 @@ int	main(int ac, char **av)
 	else
 		if (__init_cub3d(&data) == __FAILURE)
 			return (__quit(&data), __FAILURE);
-	minimap(&data);
 	// if (!parsing(av, &data))
 		// return (__FAILURE);
 	// if (!init_game(&data))
 		// return (__FAILURE);
-	// __game_loop(&data);
+	data.player = malloc(sizeof(data.player));
+	if (!data.player)
+		return (-1);
+	init_user_pos(data.player);
+	mlx_hook(data.cub.win, 2, 1L<<0, move_little_square, &data);
+	mlx_hook(data.cub.win, 17, 1L<<0, close_little_window, &data);
+	mlx_loop_hook(data.cub.mlx, minimap, &data);
 	mlx_loop(data.cub.mlx);
 	return (__SUCCESS);
 }

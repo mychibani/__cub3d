@@ -6,7 +6,7 @@
 /*   By: ychibani <ychibani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:44:40 by ychibani          #+#    #+#             */
-/*   Updated: 2022/11/04 11:38:26 by ychibani         ###   ########.fr       */
+/*   Updated: 2022/11/04 18:37:33 by ychibani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,18 @@ void	draw_map(t_program_data *data)
 	}
 }
 
-void	minimap(t_program_data *data)
+void	draw_player(t_program_data *data)
 {
-	data->player = malloc(sizeof(data->player));
-	if (!data->player)
-		return ;
-	init_user_pos(data->player);
-	draw_map(data);
-	draw_square(data->player->x * BLOCK_SIZE + 32 - 5, data->player->y * BLOCK_SIZE + 32 - 5, 10, 0x00FF00, &data->cub);
-	free(data->player);
-	__put_image_to_window(data);
+		draw_map(data);
+		draw_square(data->player->x, data->player->y , 10, 0x00FF00, &data->cub);
+		__put_image_to_window(data);
+		mlx_destroy_image(data->cub.mlx, data->cub.img.new_img);
+		data->cub.img.new_img = mlx_new_image(data->cub.mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
+}
+
+int	minimap(t_program_data *data)
+{
+	draw_player(data);
+	//__put_image_to_window(data);
+	return (0);
 }

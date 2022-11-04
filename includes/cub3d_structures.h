@@ -33,8 +33,8 @@ typedef struct s_cub
 
 typedef struct s_player	
 {
-	int x;
-	int y;
+	double x;
+	double y;
 	double angle;
 }	t_player;
 
